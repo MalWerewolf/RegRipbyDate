@@ -19,7 +19,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ----------------------------------------------------------------------------------
 
-A script very similar to William Ballenthin's print all sample script @ 
+A script very similar to sample script @ 
 https://github.com/williballenthin/python-registry/blob/master/samples/printall.py, 
 but this allows for a more elegant way to do a refined search of the registry to happen 
 based upon the modified date.
