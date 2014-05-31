@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 """
+-------------------------------------------------------------------------------
 Copyright 2014 CaptainCrabnasty
 
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,7 +23,6 @@ Windows Registry Hives based upon the 'modified date.'
 This work is based upon the 'printall.py' sample found below:
 
     https://github.com/williballenthin/python-registry/blob/master/samples/
-
 """
 
 __program__ = "reg_rip_by_date.py"
@@ -37,7 +37,6 @@ import csv
 import os
 import sys
 from datetime import datetime
-
 
 try:
     from Registry import Registry
@@ -57,7 +56,7 @@ def format_date(user_input):
     try:
         formatted_date = datetime.strptime(user_input, "%Y-%m-%d %H:%M:%S")
 
-    except:
+    except ValueError:
 
         sys.exit(
             """
@@ -83,6 +82,7 @@ def input_file(user_input):
 
     return user_input
 
+
 def get_keys_in_range(key, earliest_time, latest_time, results_dict):
     """Return keys modified between earliest and latest times provided."""
 
@@ -93,6 +93,7 @@ def get_keys_in_range(key, earliest_time, latest_time, results_dict):
     for sub_key in key.subkeys():
 
         get_keys_in_range(sub_key, earliest_time, latest_time, results_dict)
+
 
 def main():
     """Where the automagic happens..."""
@@ -108,12 +109,12 @@ def main():
 
     parser.add_argument(
         "-e", "--earliest", type=format_date, required=True,
-        metavar="YYYY-MM-DD HH:MM:SS", help="Earliest Date."
+        metavar="YYYY-MM-DD HH:MM:SS", help="Earliest Date/Time."
     )
 
     parser.add_argument(
         "-l", "--latest", type=format_date, required=True,
-        metavar="YYYY-MM-DD HH:MM:SS", help="Earliest Date."
+        metavar="YYYY-MM-DD HH:MM:SS", help="Latest Date/Time."
     )
 
     parser.add_argument(
@@ -123,7 +124,7 @@ def main():
 
     parser.add_argument(
         "-o", "--output", type=str, required=False,
-        metavar="OUTPUT PATH", help="Optional Output to CSV."
+        metavar="FILE PATH", help="Optional Output to CSV."
     )
 
     args = parser.parse_args()
