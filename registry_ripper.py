@@ -86,7 +86,7 @@ def input_file(user_input):
 def get_keys_in_range(key, earliest_time, latest_time, results_dict):
     """Return keys modified between earliest and latest times provided."""
 
-    if earliest_time < key.timestamp() < latest_time:
+    if earliest_time <= key.timestamp() <= latest_time:
 
         results_dict[str(key.timestamp())] = key.path()
 
@@ -157,11 +157,15 @@ def main():
 
     else:
 
+        count = 0  #USED FOR TESTING
+
         for timestamp, registry_key in results_dict.iteritems():
 
             print("%s, %s" % (timestamp, registry_key))
 
+            count+=1
 
+        print count
 if __name__ == "__main__":
     """The proper way to run this code..."""
 
