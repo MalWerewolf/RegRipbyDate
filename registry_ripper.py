@@ -18,7 +18,7 @@ Copyright 2014 CaptainCrabnasty
 -------------------------------------------------------------------------------
 
 This code intends to provide an elegant solution for searching through the
-Windows Registry Hives based upon the 'modified date.'
+Windows Registry Hives based upon a given time frame.
 
 This work is based upon the 'printall.py' sample found below:
 
