@@ -157,15 +157,11 @@ def main():
 
     else:
 
-        count = 0  #USED FOR TESTING
-
         for timestamp, registry_key in results_dict.iteritems():
 
             print("%s, %s" % (timestamp, registry_key))
 
-            count+=1
 
-        print count
 if __name__ == "__main__":
     """The proper way to run this code..."""
 
