@@ -13,6 +13,12 @@ a CSV file.
 
 -----
 
+### Prerequisites
+
+* This code has been tested on Python 2.7.6
+
+-----
+
 ### Usage
 
 This program accepts an input file path (Registry Hive), a range of time (earliest/latest),
