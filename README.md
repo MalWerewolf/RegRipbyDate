@@ -1,26 +1,62 @@
-RegRipbyDate
+reg_rip_by_date
 ============
 
-A script very similar to sample script @ https://github.com/williballenthin/python-registry/blob/master/samples/printall.py, but this allows for a more elegant way to do a refined search of the registry to happen based upon the modified date.
+This code intends to provide an elegant solution for searching through the
+Windows Registry Hives based upon a given time frame.
+
+This work is based upon the 'printall.py' sample found below:
+
+    https://github.com/williballenthin/python-registry/blob/master/samples/
+
+Outputs the timestamp and full registry paths either to the console, or
+a CSV file.
+
+-----
+
+### Prerequisites
+
+* This code has been tested on Python 2.7.6
+
+-----
+
+### Usage
+
+This program accepts an input file path (Registry Hive), a range of time (earliest/latest),
+and optionally, an output file path (CSV).
+
+```
+usage: reg_rip_by_date.py [-h] -e YYYY-MM-DD HH:MM:SS -l YYYY-MM-DD HH:MM:SS
+                          -i FILE PATH [-o FILE PATH]
+
+Query Registry Hives by 'modified date'
+
+optional arguments:
+  -h, --help                                              show this help message and exit
+  -e YYYY-MM-DD HH:MM:SS, --earliest YYYY-MM-DD HH:MM:SS  Earliest Date/Time.
+  -l YYYY-MM-DD HH:MM:SS, --latest YYYY-MM-DD HH:MM:SS    Latest Date/Time.
+  -i FILE PATH, --input FILE PATH                         Full Path to Registry Hive.
+  -o FILE PATH, --output FILE PATH                        Optional Output to CSV.
+```
+
+-----
+
+### Examples
+
+ ```
+python reg_rip_by_date.py -earliest "2014-03-01 00:00:00" -latest "2014-03-30 00:00:00" -input "/Users/username/Desktop/SYSTEM"
+ ```
+
+ OR
+
+ ```
+python reg_rip_by_date.py --earliest "2014-03-01 00:00:00" --latest "2014-03-02 00:00:00" --input "/Users/username/Desktop/SYSTEM" --output "/Users/username/Desktop/TEST.csv"
+ ```
+
+-----
 
 
-Prerequisite
-------------
+### Sources
 
-You need to have the python-registry library from https://github.com/williballenthin/python-registry setup to use this and this script must be located in that folder.
-
-The script below takes in 3 required arguments (Earliest Date, Latest Date, and File Location) and 1 optional argument (Output to CSV or not). 
-
-
-Examples
-------------
-
-MAC Example: RegRipbyDate.py -e '2014-01-26 12:00:00' -l '2014-01-28 00:00:00' -i /Users/Someone/Desktop/Temp/SYSTEM. (Note the single Quotes for MAC)
-
-Windows: Windows Example: RegRipbyDate.py -e "2014-01-20 00:00:00" -l "2014-01-27 00:00:00" -i C:\Users\SomeUser\Desktop\SYSTEM (Note the double Quotes for Windows)
-
-Sources
--------
 https://github.com/williballenthin/python-registry
 
 ```
