@@ -26,8 +26,8 @@ This work is based upon the 'printall.py' sample found below:
 """
 
 __program__ = "reg_rip_by_date.py"
-__author__ = "CaptainCrabnasty"
-__copyright__ = "Copyright 2014, CaptainCrabnasty"
+__author__ = "nanoSpl0it"
+__copyright__ = "Copyright 2014, nanoSpl0it"
 __license__ = "Apache License 2.0"
 __version__ = "0.0.1"
 __status__ = "Development"
